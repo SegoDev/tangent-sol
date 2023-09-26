@@ -1,40 +1,108 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+  <br>
+    <b>Employees Database</b>
+</h1>
+<h4 align="center">Tangent Solutions Assessment</h4>
+<p align="center">
+  <a href="#purpose">Purpose</a> •
+  <a href="#expected">Expected behaviour</a> •
+  <a href="#solution">Solution</a> •
+  <a href="#techstack">Tech Stack</a> •
+  <a href="#installing">Installing</a> •
+  <a href="#thoughts">Final Thoughts</a> •
+</p>
+
+___
+
+### Purpose
+
+Your challenge is to build out the frontend and backend components of an employee application.
+
+### Expected
+- Creating an employee
+  - When creating a new employee, an ID needs to be created. Each ID should be 2
+  - random uppercased letters followed by 4 random numbers.
+- Editing an employee
+  - When saving changes to an employee, all fields are required when the "Save Changes" button is clicked. If the user clicks "Cancel", any unsaved changes should be reset.
+- Adding skills
+  - When adding skills, you should be able to add multiple.
+# Solution
+
+This repository contains the application as described above
+
+## 📸 Screenshots
+
+![Alt text - Home Screen](/public/list.jpg)
+![Alt text - New Employee](/public/new.jpg)
+![Alt text - Edit Employee](/public/edit.jpg)
+![Alt text - Empty Screen](/public/empty.jpg)
+![Alt text - Tests results](/public/tests.jpg)
+### Techstack
+
+Details of the tech stack that has been used and some of the decisions.
+
+- [typescript]() - For static typechecking
+- [NextJs]() - Client Framework
+- [Next Api routes]() - For backend
+- [SWR]() - For data fetching
+- [Prisma]() - ORM for database queries
+- [ChakraUI]() - For rapid development and prototyping I prefer using ChakraUI component library for styling, it  puts accessibility first, it is highly customizable and mobile responsive out of the box.
+- [Jest & React Testing Library]() - Jest for running the tests and RTL for test assertions
 
 ## Getting Started
 
-First, run the development server:
+Follow the instructions below to get up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+you should already have the following preinstalled:
+
+- Node >= 16
+- git
+
+### Installing
+
+Below is a series of step-by-step instructions that will guide you on how to get a development environment running.
+
+Create a local clone of the repository
+
+Install the projects dependencies
+
+```bash
+npm i
+```
+
+Start the projects development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### System Design
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- I use SWR as the data fetching mechanism, this allows me to invalidate the cache and refetch new data without reloading the whole
+- page when editing, deleting or adding a new employee.
+- The local caching mechanism I've opted for is React Context, upon mounting the home page I update the context.
+- I am using Prisma as the ORM
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Bonus
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Form validations functionality
+- state management using React Context and Provider
+- Unit tests
+- added toast notifications when employees are added, updated or deleted
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Challenges
 
-## Learn More
+- due to time constraints I could not get to filtering and searching users
 
-To learn more about Next.js, take a look at the following resources:
+### Time taken to complete
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Review: `10 mins` to read and review the requirements
+- Design: `30 mins` to think about design decisions.
+- Implementation: `2h:05mins` to implement the whole project including testing.
+- Documentation: `10 mins` to write up the README document and gather my thoughts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Authors
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Segopotso Makhutja** <leketi.s@gmail.com>
